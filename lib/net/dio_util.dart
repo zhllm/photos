@@ -142,7 +142,7 @@ class DioUtils {
       if (responseData is Map<String, dynamic>) {
         Map<String, dynamic> responseMap = responseData;
         int code = responseMap["code"];
-        if (code == 200) {
+        if (code == 200 || code == 0) {
           //业务代码处理正常
           //获取数据
           dynamic data = responseMap["data"];
