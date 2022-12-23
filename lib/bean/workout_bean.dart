@@ -29,6 +29,15 @@ class WorkoutBean extends Equatable {
         "exercises": exercises,
       };
 
+  int getTotalTime() {
+    int time = exercises!.fold(
+      0,
+      (previousValue, element) =>
+          previousValue + element.prelude! + element.duration!,
+    );
+    return time;
+  }
+
   @override
   List<Object?> get props => [title, exercises];
 
